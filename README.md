@@ -1,5 +1,9 @@
-# Informações ao avaliador:
-#### Quais as principais características da base de dados
+
+# Open University Learning Analytics Regression
+Desafio elaborando um modelo de regressão por ensemble para obter a nota de estudantes em provas. Utiliza o dataset da Open University Learning Analytics.
+
+# Resumo
+## Quais as principais características da base de dados
 - Há muitos outliers em toda a distribuição (ver EDA), 
 - A base é facilmente agrupável e de entidades normalizadas, 
 - A base está dividida em 3 categorias:
@@ -7,18 +11,17 @@
     - Base de cursos e provas realizadas;
     - Demografia e informações dos estudantes 
 
-#### Problema de negócio
+## Problema de negócio
 Prever nota (score) por regressão.
 - Como? Utilizando das principais informações socioeconômicas, demográficas, tipo de teste e engajamento de cliques do estudante para prever a nota.
 
-#### Modelo utilizado
+## Modelo utilizado
 RandomForestRegressor
 - Motivo: por ser do médoto ensemble, lida bem com variáveis mistas (numéricas e categóricas)
 
-#### Como avalio os resultados
-O modelo de baseline conseguiu identificar de forma adequada os valores de provas deixadas em branco e errou em erro médio absoluto aproximadamente 10 pontos entre valores verdadeiros e preditos.  
+## Avaliação dos Resultados
+O modelo de baseline conseguiu identificar de forma adequada os valores de provas deixadas em branco e errou em erro médio absoluto aproximadamente 10 pontos entre valores verdadeiros e preditos.   
 O modelo pode ser facilmente melhorado em novas iterações utilizando feature selection, algumas das variáveis não pesaram no critério de decisão da Random Forest (ver Resultados).
-
 
 Segue código da solução.
 
@@ -66,19 +69,6 @@ student_vle_grouped.head(2)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -123,19 +113,7 @@ student_info_vle.head(2)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -204,19 +182,6 @@ student_assessment_assessment.head(2)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -276,19 +241,6 @@ info_vle_assessment.head(2)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -455,19 +407,6 @@ df[df.id_student == students_with_banked_scores[2]][['id_student', 'is_banked', 
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -848,19 +787,6 @@ pd.DataFrame({
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
