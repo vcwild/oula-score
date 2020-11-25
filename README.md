@@ -3,8 +3,9 @@
 Desafio elaborando um modelo de regressão por ensemble para obter a nota de estudantes em provas. Utiliza o dataset da Open University Learning Analytics.
 
 # Resumo
+- [Ver como Jupyter Notebook](./oula.ipynb)
 ## Quais as principais características da base de dados
-- Há muitos outliers em toda a distribuição (ver EDA), 
+- Há muitos outliers em toda a distribuição ([ver EDA](#EDA)), 
 - A base é facilmente agrupável e de entidades normalizadas, 
 - A base está dividida em 3 categorias:
     - Registros de atividades dos estudantes;
@@ -21,7 +22,7 @@ RandomForestRegressor
 
 ## Avaliação dos Resultados
 O modelo de baseline conseguiu identificar de forma adequada os valores de provas deixadas em branco e errou em erro médio absoluto aproximadamente 10 pontos entre valores verdadeiros e preditos.   
-O modelo pode ser facilmente melhorado em novas iterações utilizando feature selection, algumas das variáveis não pesaram no critério de decisão da Random Forest (ver Resultados).
+O modelo pode ser facilmente melhorado em novas iterações utilizando feature selection, algumas das variáveis não pesaram no critério de decisão da Random Forest ([ver Resultados](#Results)).
 
 Segue código da solução.
 
@@ -352,7 +353,7 @@ aux.to_csv('oula.csv', header=True, index_label=False)
 df = pd.read_csv('oula.csv')
 ```
 
-# EDA
+# EDA <a name="EDA" />
 
 ### Qual é a nota média dos estudantes por teste?
 
@@ -674,7 +675,7 @@ rf.fit(X_train_scaled, y_train)
 results = rf.predict(X_test_scaled)
 ```
 
-# Resultados
+# Resultados <a name="Results" />
 
 ## Features por importância
 
